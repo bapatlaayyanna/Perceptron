@@ -1,6 +1,8 @@
+import numpy as np
+
 class Perceptron:
   def __init__(self, eta, epochs):
-    self.weights = np.random.randn(3) * 1e-4 # SMALL WEIGHT INIT
+    self.weights = np.random.randn(3) * 1e-4 
     print(f"initial weights before training: \n{self.weights}")
     self.eta = eta # LEARNING RATE
     self.epochs = epochs 
@@ -8,13 +10,13 @@ class Perceptron:
 
   def activationFunction(self, inputs, weights):
     z = np.dot(inputs, weights) # z = W * X
-    return np.where(z > 0, 1, 0) # CONDITION, IF TRUE, ELSE
+    return np.where(z > 0, 1, 0) 
 
   def fit(self, X, y):
     self.X = X
     self.y = y
 
-    X_with_bias = np.c_[self.X, -np.ones((len(self.X), 1))] # CONCATINATION
+    X_with_bias = np.c_[self.X, -np.ones((len(self.X), 1))] 
     print(f"X with bias: \n{X_with_bias}")
 
     for epoch in range(self.epochs):
