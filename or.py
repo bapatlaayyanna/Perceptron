@@ -19,12 +19,12 @@ def main(data,eta,epoch,filename):
     save_model(model,filename)
 
 if __name__=='__main__':#Entry point
-    AND = {
+    OR = {
     "x1": [0,0,1,1],
     "x2": [0,1,0,1],
-    "y": [0,0,0,1]}
+    "y": [0,1,1,1]}
 
     ETA = 0.3 
     EPOCHS = 10
     
-    main(data=AND,eta=ETA,epoch=EPOCHS,filename="and.model")
+    main(data=OR,eta=ETA,epoch=EPOCHS,filename="or.model")
